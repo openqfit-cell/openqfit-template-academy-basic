@@ -5,13 +5,13 @@ import { siteConfig } from '../data/siteData';
 export function Hero() {
   return (
     <section className="bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20 lg:py-28">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 py-6 mb-10 md:md-14 lg:md-12">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Content */}
-          <div className="order-2 lg:order-1">
+          <div className="order-1">
             {/* Headline */}
-            <h1 className="font-bold text-gray-900 mb-6 leading-tight text-left text-[48px]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl text-neutral-900 mb-6 leading-tight tracking-tighter">
               {heroData.headline} <span className="text-blue-600">{heroData.headlineHighlight}</span>{heroData.headlineEnd}
             </h1>
 
@@ -60,12 +60,12 @@ export function Hero() {
           </div>
 
           {/* Right Column: Image */}
-          <div className="order-1 lg:order-2">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+          <div className="">
+            <div className="aspect-[4/3] lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
               <img
                 src={heroData.image.src}
                 alt={heroData.image.alt}
-                className="w-full h-full object-cover aspect-[4/3]"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>

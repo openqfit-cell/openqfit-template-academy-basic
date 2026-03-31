@@ -11,7 +11,7 @@ export const heroData: HeroContent = {
   headline: '체계적인 커리큘럼으로',
   headlineHighlight: '확실한 실력 향상',
   headlineEnd: '을 약속합니다',
-  subheadline: '15년 경력의 전문 강사진과 함께하는 맞춤형 교육.\n기초부터 심화까지 단계별 학습으로 목표를 달성하세요.',
+  subheadline: '15년 경력의 전문 강사진과 함께하는 맞춤형 교육. 기초부터 심화까지 단계별 학습으로 목표를 달성하세요.',
   
   // Hero image - replace this path with your own image
   image: {
