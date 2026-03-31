@@ -13,6 +13,10 @@ export interface SiteConfig {
   siteName: string;
   phone: string;
   email: string;
+  image: {
+    src: string;
+    alt: string;
+  };
   address: {
     street: string;
     building: string;

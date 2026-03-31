@@ -26,6 +26,11 @@ export const siteConfig: SiteConfig = {
   // Basic site information
   siteName: '청담아카데미',
   
+  image: {
+    src: '/images/logo.png',
+    alt: '청담아카데미 수업 환경',
+  },
+
   // Contact information
   phone: '02-1234-5678',
   email: 'info@cheongdam-academy.com',

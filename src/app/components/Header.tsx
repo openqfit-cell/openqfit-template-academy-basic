@@ -33,9 +33,19 @@ export function Header() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <div className="flex-shrink-0">
-              <h1 className="font-bold text-xl text-gray-900">{siteConfig.siteName}</h1>
-            </div>
+            <button
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                setIsMenuOpen(false);
+              }}
+              className="flex flex-col group cursor-pointer"
+            >
+              <img
+                src={siteConfig.image.src}
+                alt={siteConfig.image.alt}
+                className="w-30 object-cover"
+              />
+            </button>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
@@ -70,17 +80,17 @@ export function Header() {
                 <Phone className="w-4 h-4" />
                 {siteConfig.cta.short}
               </a>
-              
-             {/* Mobile menu button */}
+
+              {/* Mobile menu button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 rounded-lg text-neutral-600 hover:text-blue-600 hover:bg-neutral-50 transition-colors"
+                className="lg:hidden p-2 rounded-lg text-neutral-600 hover:text-blue-600 hover:bg-neutral-50 transition-colors cursor-pointer"
                 aria-label={mobileMenuOpen ? '메뉴 닫기' : '메뉴 열기'}
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
-              </div>
             </div>
+          </div>
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
@@ -100,7 +110,7 @@ export function Header() {
             </div>
           )}
         </div>
-      </header>
+      </header >
     </>
   );
 }
