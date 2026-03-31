@@ -4,8 +4,8 @@ import { siteConfig } from '../data/siteData';
 
 export function Hero() {
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white pb-20 lg:pb-0">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-6 lg:py-20">
+    <section className="bg-gradient-to-b from-gray-50 to-white pb-14 sm:pb-12 lg:pb-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-6 lg:py-12">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Content */}
