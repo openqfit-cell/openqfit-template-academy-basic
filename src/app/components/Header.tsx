@@ -24,7 +24,7 @@ export function Header() {
       {/* 모바일 메뉴 배경 Dim */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
           onClick={() => setMobileMenuOpen(false)}
         />
       )}
@@ -84,7 +84,7 @@ export function Header() {
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="md:hidden border-t border-gray-200 py-4">
+            <div className="lg:hidden border-t border-gray-200 py-4">
               <nav className="flex flex-col gap-1">
                 {navItems.map((item) => (
                   <a

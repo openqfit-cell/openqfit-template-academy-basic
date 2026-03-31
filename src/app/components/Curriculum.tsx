@@ -11,7 +11,7 @@ export function Curriculum() {
         </div>
 
         {/* Timeline */}
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-2 space-y-6 mb-12 w-full w-auto">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-2 space-y-4 mb-12 w-full w-auto">
           {curriculumStages.map((stage) => (
             <div flex flex-col
               key={stage.title}

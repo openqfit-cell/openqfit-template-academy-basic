@@ -1,5 +1,4 @@
 import { Award, BookOpen, GraduationCap, CheckCircle2 } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { instructorsData } from '../data/instructorsData';
 
 export function Instructors() {
@@ -20,8 +19,8 @@ export function Instructors() {
               <div className="flex flex-col sm:flex-row gap-6">
                 {/* Profile Image */}
                 <div className="flex-shrink-0">
-                  <div className="w-28 h-28 sm:w-32 sm:h-32 bg-gray-200 rounded-lg overflow-hidden">
-                    <ImageWithFallback 
+                  <div className="aspect-[1/1] sm:w-32 sm:h-32 bg-gray-200 rounded-lg overflow-hidden">
+                    <img 
                       src={instructor.image}
                       alt={instructor.name}
                       className="w-full h-full object-cover"

@@ -1,5 +1,4 @@
 import { Phone, Award, Users, TrendingUp, ArrowRight } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { heroData } from '../data/heroData';
 import { siteConfig } from '../data/siteData';
 
@@ -63,7 +62,7 @@ export function Hero() {
           {/* Right Column: Image */}
           <div className="order-1 lg:order-2">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <ImageWithFallback
+              <img
                 src={heroData.image.src}
                 alt={heroData.image.alt}
                 className="w-full h-full object-cover aspect-[4/3]"
