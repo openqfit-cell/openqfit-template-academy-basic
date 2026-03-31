@@ -43,7 +43,7 @@ export function Header() {
               <img
                 src={siteConfig.image.src}
                 alt={siteConfig.image.alt}
-                className="w-30 object-cover"
+                className="w-30 object-cover group-hover:opacity-80"
               />
             </button>
 
