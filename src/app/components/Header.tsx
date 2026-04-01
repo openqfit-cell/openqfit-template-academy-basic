@@ -100,7 +100,7 @@ export function Header() {
                   <a
                     key={item.href}
                     href={item.href}
-                    className="text-gray-700 hover:text-blue-600 hover:bg-gray-50 py-3 px-2 rounded transition-colors"
+                    className="text-center text-gray-700 hover:text-blue-600 hover:bg-gray-50 py-3 px-2 rounded transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.label}
