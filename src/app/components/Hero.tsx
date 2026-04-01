@@ -9,7 +9,7 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Content */}
-          <div className="order-1">
+          <div className="order-1 text-center lg:text-left">
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl text-neutral-900 mb-6 leading-tight tracking-tighter">
               {heroData.headline} <span className="text-blue-600">{heroData.headlineHighlight}</span>{heroData.headlineEnd}
@@ -21,7 +21,7 @@ export function Hero() {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-12">
               <a 
                 href="#contact"
                 className="bg-blue-600 text-white px-8 py-4 rounded-xl hover:bg-blue-700 transition-all flex items-center justify-center gap-2 font-semibold text-lg shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/30"
@@ -39,7 +39,7 @@ export function Hero() {
             </div>
 
             {/* Trust Points */}
-            <div className="flex flex-wrap gap-8">
+            <div className="flex flex-wrap gap-8 justify-center lg:justify-start">
               {heroData.stats.map((stat) => {
                 const icons = [Award, Users, TrendingUp];
                 const index = heroData.stats.indexOf(stat);
