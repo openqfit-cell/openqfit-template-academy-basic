@@ -84,7 +84,7 @@ export function Header() {
               {/* Mobile menu button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 rounded-lg text-neutral-600 hover:text-blue-600 hover:bg-neutral-50 transition-colors cursor-pointer"
+                className="lg:hidden p-2 rounded-lg text-neutral-600 hover:text-neutral-800 hover:bg-neutral-50 transition-colors cursor-pointer"
                 aria-label={mobileMenuOpen ? '메뉴 닫기' : '메뉴 열기'}
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
