@@ -30,13 +30,13 @@ export function Header() {
       )}
 
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <button
               onClick={() => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-                setIsMenuOpen(false);
+                setMobileMenuOpen(false);
               }}
               className="flex flex-col group cursor-pointer"
             >
@@ -94,7 +94,7 @@ export function Header() {
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="lg:hidden border-t border-gray-200 py-4">
+            <div className="lg:hidden absolute left-0 right-0 z-50 border-t border-gray-200 py-4 px-4 bg-white">
               <nav className="flex flex-col gap-1">
                 {navItems.map((item) => (
                   <a
