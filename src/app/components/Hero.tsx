@@ -45,13 +45,13 @@ export function Hero() {
                 const index = heroData.stats.indexOf(stat);
                 const Icon = icons[index];
                 return (
-                  <div key={stat.label} className="flex items-center gap-3">
+                  <div key={stat.label} className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left hover:scale-115 duration-300">
                     <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
                       <Icon className="w-6 h-6 text-blue-600" />
                     </div>
                     <div>
                       <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
-                      <p className="text-sm text-gray-600">{stat.label}</p>
+                      <p className="text-sm text-gray-400 lg:text-gray-600">{stat.label}</p>
                     </div>
                   </div>
                 );
