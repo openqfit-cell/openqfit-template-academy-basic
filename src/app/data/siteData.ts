@@ -69,6 +69,7 @@ export const siteConfig: SiteConfig = {
   // CTA button text
   cta: {
     primary: '수강 상담 신청',
+    secondary: '수업 과정 보기',
     short: '상담',
   },
   

@@ -23,7 +23,7 @@ export function Hero() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-12">
               <a 
-                href="#contact"
+                href={`tel:${siteConfig.phone.replace(/[^0-9]/g, '')}`}
                 className="bg-blue-600 text-white px-8 py-4 rounded-xl hover:bg-blue-700 transition-all flex items-center justify-center gap-2 font-semibold text-lg shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/30"
               >
                 <Phone className="w-5 h-5" />
@@ -33,7 +33,7 @@ export function Hero() {
                 href="#classes"
                 className="bg-white text-gray-900 px-8 py-4 rounded-xl border-2 border-gray-300 hover:border-blue-600 hover:text-blue-600 transition-all flex items-center justify-center gap-2 font-semibold text-lg"
               >
-                수업 과정 보기
+                {siteConfig.cta.secondary}
                 <ArrowRight className="w-5 h-5" />
               </a>
             </div>
