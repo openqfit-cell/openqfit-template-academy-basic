@@ -17,7 +17,7 @@ export const instructorsData: Instructor[] = [
     achievements: '전 대치동 유명학원 대표강사',
     certifications: ['교원자격증 보유', '학습코칭 전문가', '교육부 인증 강사'],
     // Replace with your own instructor image
-    image: 'https://images.unsplash.com/photo-1559722530-0562aef6306a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrb3JlYW4lMjBtYWxlJTIwdGVhY2hlciUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NzQ1OTU5ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: '/images/instructor01_img.jpg',
   },
   {
     name: '박지영',
@@ -28,7 +28,7 @@ export const instructorsData: Instructor[] = [
     achievements: '교육부 우수강사 선정 (2024)',
     certifications: ['교원자격증 보유', '심리상담사 2급', '학습전략 지도사'],
     // Replace with your own instructor image
-    image: 'https://images.unsplash.com/photo-1740153204804-200310378f2f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrb3JlYW4lMjBmZW1hbGUlMjB0ZWFjaGVyJTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc3NDU5NTk4Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: '/images/instructor02_img.jpg',
   },
 ];
 
