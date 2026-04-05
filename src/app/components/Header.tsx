@@ -1,19 +1,17 @@
+/**
+ * 헤더 컴포넌트
+ * --------------------------------------------------
+ * 로고, 상단 메뉴, 전화 CTA, 모바일 메뉴를 담당합니다.
+ */
 import { Menu, Phone, X } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import { siteConfig, navItems } from '../data/siteData';
+import { useEffect, useState } from 'react';
+import { navItems, siteConfig } from '../data/data';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // 모바일 메뉴 열림 시 스크롤 방지
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-
-    // 클린업: 컴포넌트 언마운트 시 스크롤 복원
+    document.body.style.overflow = mobileMenuOpen ? 'hidden' : 'unset';
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -21,7 +19,6 @@ export function Header() {
 
   return (
     <>
-      {/* 모바일 메뉴 배경 Dim */}
       {mobileMenuOpen && (
         <div
           className="fixed inset-0 bg-black/50 z-40 lg:hidden"
@@ -32,7 +29,6 @@ export function Header() {
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
             <button
               onClick={() => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -47,7 +43,6 @@ export function Header() {
               />
             </button>
 
-            {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
               {navItems.map((item) => (
                 <a
@@ -60,7 +55,6 @@ export function Header() {
               ))}
             </nav>
 
-            {/* CTA Button - Desktop */}
             <div className="hidden lg:block">
               <a
                 href={`tel:${siteConfig.phone.replace(/[^0-9]/g, '')}`}
@@ -71,7 +65,6 @@ export function Header() {
               </a>
             </div>
 
-            {/* Mobile: CTA + Menu */}
             <div className="flex lg:hidden items-center gap-3">
               <a
                 href={`tel:${siteConfig.phone.replace(/[^0-9]/g, '')}`}
@@ -81,7 +74,6 @@ export function Header() {
                 {siteConfig.cta.short}
               </a>
 
-              {/* Mobile menu button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="lg:hidden p-2 rounded-lg text-neutral-600 hover:text-neutral-800 hover:bg-neutral-50 transition-colors cursor-pointer"
@@ -92,7 +84,6 @@ export function Header() {
             </div>
           </div>
 
-          {/* Mobile Menu */}
           {mobileMenuOpen && (
             <div className="lg:hidden absolute left-0 right-0 z-50 border-t border-gray-200 py-4 px-4 bg-white">
               <nav className="flex flex-col gap-1">
@@ -110,7 +101,7 @@ export function Header() {
             </div>
           )}
         </div>
-      </header >
+      </header>
     </>
   );
 }

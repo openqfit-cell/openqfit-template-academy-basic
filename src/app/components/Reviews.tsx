@@ -1,5 +1,10 @@
-import { Star, Quote } from 'lucide-react';
-import { reviewsData, reviewStatsData } from '../data/reviewsData';
+/**
+ * 후기 컴포넌트
+ * --------------------------------------------------
+ * 현재 App.tsx에는 연결되어 있지 않지만, 나중에 후기 섹션을 추가할 때 바로 사용할 수 있는 예비 컴포넌트입니다.
+ */
+import { Quote, Star } from 'lucide-react';
+import { reviewStatsData, reviewsData } from '../data/data';
 
 export function Reviews() {
   return (
@@ -12,10 +17,7 @@ export function Reviews() {
 
         <div className="grid md:grid-cols-2 gap-6">
           {reviewsData.map((review) => (
-            <div 
-              key={`${review.name}-${review.course}-${review.date}`}
-              className="bg-white border border-gray-200 rounded-lg p-6"
-            >
+            <div key={`${review.name}-${review.course}-${review.date}`} className="bg-white border border-gray-200 rounded-lg p-6">
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <div className="flex items-center gap-2 mb-1">
@@ -46,7 +48,6 @@ export function Reviews() {
           ))}
         </div>
 
-        {/* Statistics */}
         <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
           {reviewStatsData.map((stat) => (
             <div key={stat.label} className="text-center">

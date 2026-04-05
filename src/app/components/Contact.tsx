@@ -1,6 +1,10 @@
+/**
+ * 문의 및 오시는 길 컴포넌트
+ * --------------------------------------------------
+ * 연락처, 지도, 교통편 안내, 상담 CTA를 보여줍니다.
+ */
 import { MapPin, Phone, Clock, Mail, ExternalLink, MessageCircle } from 'lucide-react';
-import { siteConfig } from '../data/siteData';
-import { transportationInfoData, contactContent } from '../data/contactData';
+import { contactContent, siteConfig, transportationInfoData } from '../data/data';
 
 export function Contact() {
   const googleMapsUrl = siteConfig.map.googleMapLink;

@@ -1,22 +1,31 @@
 /**
- * Site Data Type Definitions
- * 
- * This file documents the structure of all data used in the academy website.
- * Refer to this when customizing siteData.ts
+ * 통합 타입 정의 파일
+ * --------------------------------------------------
+ * 이 파일은 아카데미 기본형 템플릿에서 사용하는 데이터 구조를 정의합니다.
+ *
+ * 운영 목적
+ * - data.ts를 작성할 때 형태를 명확하게 유지
+ * - Cursor가 자동 생성한 데이터가 어떤 구조여야 하는지 기준 제공
+ * - 고객별 데이터 교체 시 타입 오류를 빠르게 발견
  */
 
-// =============================================================================
-// SITE CONFIGURATION
-// =============================================================================
+import type { LucideIcon } from 'lucide-react';
 
+/** 공통 링크 정보 */
+export interface NavItem {
+  label: string;
+  href: string;
+}
+
+/** 사이트 전반에서 공통으로 쓰는 기본 설정 */
 export interface SiteConfig {
   siteName: string;
-  phone: string;
-  email: string;
   image: {
     src: string;
     alt: string;
   };
+  phone: string;
+  email: string;
   address: {
     street: string;
     building: string;
@@ -25,7 +34,7 @@ export interface SiteConfig {
   map: {
     lat?: number;
     lng?: number;
-    address: string;
+    fullAddress: string;
     googleMapEmbedUrl?: string;
     googleMapLink: string;
     naverMapLink: string;
@@ -38,15 +47,13 @@ export interface SiteConfig {
   };
   cta: {
     primary: string;
+    secondary: string;
     short: string;
   };
   kakaoTalkUrl: string;
 }
 
-// =============================================================================
-// HERO SECTION
-// =============================================================================
-
+/** 히어로 섹션 */
 export interface HeroContent {
   headline: string;
   headlineHighlight: string;
@@ -62,27 +69,7 @@ export interface HeroContent {
   }>;
 }
 
-// =============================================================================
-// NAVIGATION
-// =============================================================================
-
-export interface NavItem {
-  label: string;
-  href: string;
-}
-
-// =============================================================================
-// CLASS CATEGORIES
-// =============================================================================
-
-export interface ClassCategory {
-  title: string;
-  description: string;
-  duration: string;
-  sessions: string;
-  targets: string[];
-}
-
+/** 수업 카테고리 섹션 상단 소개 */
 export interface ClassCategoriesSection {
   title: string;
   subtitle: string;
@@ -92,20 +79,23 @@ export interface ClassCategoriesSection {
   };
 }
 
-// =============================================================================
-// CURRICULUM
-// =============================================================================
+/** 대표 수업 과정 카드 */
+export interface ClassCategory {
+  title: string;
+  description: string;
+  duration: string;
+  sessions: string;
+  targets: string[];
+}
 
+/** 커리큘럼 단계 */
 export interface CurriculumStage {
   title: string;
   weeks: string;
   topics: string[];
 }
 
-// =============================================================================
-// INSTRUCTORS
-// =============================================================================
-
+/** 강사진 정보 */
 export interface Instructor {
   name: string;
   title: string;
@@ -117,16 +107,14 @@ export interface Instructor {
   image: string;
 }
 
-// =============================================================================
-// SCHEDULE & PRICING
-// =============================================================================
-
+/** 일정 요약 카드 */
 export interface ScheduleInfo {
   label: string;
   value: string;
   detail: string;
 }
 
+/** 가격 카드 */
 export interface PricingItem {
   title: string;
   duration: string;
@@ -135,11 +123,8 @@ export interface PricingItem {
   features: string[];
 }
 
-// =============================================================================
-// REVIEWS
-// =============================================================================
-
-export interface Review {
+/** 후기 카드 */
+export interface ReviewItem {
   name: string;
   course: string;
   rating: number;
@@ -148,34 +133,26 @@ export interface Review {
   result: string;
 }
 
-export interface ReviewStat {
+/** 후기 통계 */
+export interface ReviewStatItem {
   value: string;
   label: string;
 }
 
-// =============================================================================
-// FAQ
-// =============================================================================
-
-export interface FAQ {
+/** FAQ */
+export interface FAQItem {
   question: string;
   answer: string;
 }
 
-// =============================================================================
-// TRANSPORTATION
-// =============================================================================
-
+/** 교통 안내 */
 export interface TransportationInfo {
   icon: string;
   label: string;
   detail: string;
 }
 
-// =============================================================================
-// CONTACT SECTION
-// =============================================================================
-
+/** 문의 섹션 텍스트 */
 export interface ContactContent {
   sectionTitle: string;
   sectionDescription: string;
@@ -197,70 +174,16 @@ export interface ContactContent {
   ctaDescription: string;
 }
 
-// =============================================================================
-// FOOTER
-// =============================================================================
-
-export interface FooterContent {
-  description: string;
-  quickLinks: NavItem[];
-  legal: Array<{
-    label: string;
-    href: string;
-  }>;
-  sectionTitles: {
-    quickLinks: string;
-    contact: string;
-  };
-  copyright: string;
+/** 푸터 SNS 링크 */
+export interface FooterSocialLink {
+  platform: string;
+  url: string;
+  icon: LucideIcon;
 }
 
-// =============================================================================
-// USAGE EXAMPLES
-// =============================================================================
-
-/**
- * Example: Adding a new class category
- * 
- * const newCategory: ClassCategory = {
- *   title: '특별반',
- *   description: '단기 집중 과정',
- *   duration: '2개월',
- *   sessions: '주 5회',
- *   targets: [
- *     '빠른 성과가 필요한 학생',
- *     '집중 학습을 원하는 분'
- *   ]
- * };
- * 
- * Add to classCategories array in siteData.ts
- */
-
-/**
- * Example: Modifying hero stats
- * 
- * const customStats = [
- *   { value: '20년', label: '교육 경력' },
- *   { value: '2,000+', label: '수료생' },
- *   { value: '95%', label: '합격률' },
- * ];
- * 
- * Replace heroContent.stats in siteData.ts
- */
-
-/**
- * Example: Adding a new instructor
- * 
- * const newInstructor: Instructor = {
- *   name: '이영희',
- *   title: '전임강사',
- *   experience: '8년 경력',
- *   education: '고려대학교 교육학 석사',
- *   specialties: ['그룹 수업', '입문 과정'],
- *   achievements: '교육청 우수강사 선정',
- *   certifications: ['교원자격증', '학습코칭 1급'],
- *   image: '/images/instructor-lee.jpg'
- * };
- * 
- * Add to instructors array in siteData.ts
- */
+/** 푸터 데이터 */
+export interface FooterContent {
+  description: string;
+  socialLinks: FooterSocialLink[];
+  copyright: string;
+}

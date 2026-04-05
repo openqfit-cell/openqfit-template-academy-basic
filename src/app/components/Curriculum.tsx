@@ -1,5 +1,10 @@
+/**
+ * 커리큘럼 컴포넌트
+ * --------------------------------------------------
+ * 현재 App.tsx에는 연결되어 있지 않지만, 추후 보강형으로 확장할 때 바로 사용할 수 있는 예비 섹션입니다.
+ */
 import { Check } from 'lucide-react';
-import { curriculumStages, curriculumFeatures } from '../data/curriculumData';
+import { curriculumFeatures, curriculumStages } from '../data/data';
 
 export function Curriculum() {
   return (
@@ -10,18 +15,17 @@ export function Curriculum() {
           <p className="text-gray-600">단계별로 체계적으로 학습합니다</p>
         </div>
 
-        {/* Timeline */}
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-2 space-y-4 mb-12 w-full w-auto">
-          {curriculumStages.map((stage) => (
-            <div flex flex-col
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-12 w-full">
+          {curriculumStages.map((stage, index) => (
+            <div
               key={stage.title}
-              className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden w-full w-auto hover:border-blue-600 transition-colors"
+              className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden w-full hover:border-blue-600 transition-colors"
             >
               <div className="bg-blue-50 border-b border-gray-200 px-6 py-4">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                   <div className="flex items-center gap-3">
                     <span className="inline-flex items-center justify-center w-8 h-8 bg-blue-600 text-white rounded-full text-sm font-bold">
-                      {curriculumStages.indexOf(stage) + 1}
+                      {index + 1}
                     </span>
                     <h3 className="text-xl font-bold text-gray-900">{stage.title}</h3>
                   </div>
