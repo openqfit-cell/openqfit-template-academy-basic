@@ -2,16 +2,15 @@
  * 수업 과정 소개 컴포넌트
  * --------------------------------------------------
  * 대표 과정과 각 과정의 추천 대상을 보여줍니다.
+ *
+ * 수정 내용
+ * - title 문자열에 따라 아이콘을 매핑하던 iconMap 제거
+ * - 데이터 내용이 바뀌어도 에러 없이 렌더링되도록 고정 아이콘 순환 방식으로 변경
  */
 import { Award, BookOpen, CheckCircle2, GraduationCap, Users } from 'lucide-react';
 import { classCategoriesData, classCategoriesSectionData } from '../data/data';
 
-const iconMap = {
-  '기초 과정': BookOpen,
-  '심화 과정': GraduationCap,
-  '그룹 수업': Users,
-  '1:1 맞춤': Award,
-};
+const categoryIcons = [BookOpen, GraduationCap, Users, Award];
 
 export function ClassCategories() {
   return (
@@ -23,11 +22,11 @@ export function ClassCategories() {
         </div>
 
         <div className="space-y-5">
-          {classCategoriesData.map((category) => {
-            const Icon = iconMap[category.title as keyof typeof iconMap] ?? BookOpen;
+          {classCategoriesData.map((category, index) => {
+            const Icon = categoryIcons[index % categoryIcons.length];
             return (
               <div
-                key={category.title}
+                key={`${category.title}-${index}`}
                 className="border-2 border-gray-200 rounded-lg p-5 md:p-6 hover:border-blue-600 transition-colors"
               >
                 <div className="flex flex-col md:flex-row md:items-start gap-4">
@@ -51,8 +50,8 @@ export function ClassCategories() {
                     <div>
                       <p className="text-sm font-bold text-gray-900 mb-2">수강 대상</p>
                       <ul className="space-y-1.5">
-                        {category.targets.map((target) => (
-                          <li key={target} className="text-sm text-gray-700 flex items-start gap-2">
+                        {category.targets.map((target, targetIndex) => (
+                          <li key={`${category.title}-target-${targetIndex}`} className="text-sm text-gray-700 flex items-start gap-2">
                             <CheckCircle2 className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
                             <span>{target}</span>
                           </li>
